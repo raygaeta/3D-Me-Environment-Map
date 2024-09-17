@@ -20,7 +20,7 @@ const ThreeScene = () => {
     // Load environment map (HDR)
     const rgbeLoader = new RGBELoader();
     rgbeLoader.load(
-      '/sanctuary4k.hdr',
+      '/sanctuary.hdr',
       (environmentMap) => {
         environmentMap.mapping = THREE.EquirectangularReflectionMapping;
         scene.background = environmentMap;
