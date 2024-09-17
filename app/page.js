@@ -1,15 +1,14 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
-import { GroundedSkybox } from 'three/examples/jsm/objects/GroundedSkybox.js'; // Updated import path
+import { GroundedSkybox } from 'three/examples/jsm/objects/GroundedSkybox.js';
 
 const ThreeScene = () => {
   const canvasRef = useRef(null);
   const mixerRef = useRef(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -20,16 +19,6 @@ const ThreeScene = () => {
 
     // Load environment map (HDR)
     const rgbeLoader = new RGBELoader();
-    let hdrLoaded = false;
-    let modelLoaded = false;
-
-    const checkLoadingComplete = () => {
-      if (hdrLoaded && modelLoaded) {
-        setLoading(false);
-        canvas.style.transition = 'opacity 1.5s ease-in-out';
-      }
-    };
-
     rgbeLoader.load(
       '/sanctuary4k.hdr',
       (environmentMap) => {
@@ -39,8 +28,6 @@ const ThreeScene = () => {
         const skybox = new GroundedSkybox(environmentMap, 15, 70);
         skybox.position.y = 15;
         scene.add(skybox);
-        hdrLoaded = true;
-        checkLoadingComplete();
       },
       undefined,
       (error) => {
@@ -75,9 +62,6 @@ const ThreeScene = () => {
           action.setLoop(THREE.LoopRepeat, Infinity);
           action.play();
         }
-
-        modelLoaded = true;
-        checkLoadingComplete();
       },
       undefined,
       (error) => {
@@ -151,7 +135,6 @@ const ThreeScene = () => {
           left: 0,
           width: '100vw',
           height: '100vh',
-          opacity: 1, // Start hidden
         }}
       />
     </>
