@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# A Digital Double of Me In An Environment Map ! 😎
 
-## Getting Started
+#### This project was a fun deep dive into **Three.js**, where I brought a **digital double** of myself to life! Using a 3D Scan I turned myself into a GLB model animated with **Mixamo rigs**. I then placed my clone into an HDR environment to create a visually immersive experience with dynamic lighting and shadows.
 
-First, run the development server:
+---
+
+## 🌟 Key Highlights  
+
+### 🎥 Animated Digital Double  
+I loaded and animated a GLB file of myself using Mixamo. The animations are controlled with `AnimationMixer`, and I even tweaked the playback speed for a more natural feel.
+
+### 🌌 HDR Environment  
+The scene uses `RGBELoader` to load an HDR environment map, paired with `GroundedSkybox` for realistic reflections and lighting that ties the whole scene together.
+
+### 🔍 Interactive Camera  
+Adding **OrbitControls** gave the scene smooth and intuitive camera navigation, allowing viewers to fully explore the digital double and its environment.
+
+### 🚀 Focused on Efficiency  
+Instead of building everything from scratch, I leaned into the built-in tools in Three.js to save time while keeping the setup clean and flexible for future tweaks.
+
+### 💡 Some Cool Technologies I Used  
+- **Three.js** for the entire 3D scene.  
+- **GLTFLoader** for loading my model with animations.  
+- **RGBELoader** and **GroundedSkybox** for the environment and reflections.  
+- **OrbitControls** for making the camera feel smooth and interactive.  
+
+---
+
+## 🚀 Setup  
+
+Download [Node.js](https://nodejs.org/en/download/) if you don’t already have it, and follow these steps to check it out:  
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Clone the repository  
+git clone <repository-url>  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Navigate to the project directory  
+cd <project-folder>  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Install dependencies and start the dev server  
+npm install && npm run dev  
