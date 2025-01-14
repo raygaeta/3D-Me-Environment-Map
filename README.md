@@ -1,6 +1,6 @@
 # A Digital Double of Me In An Environment Map ! 😎
 
-#### This project was a fun deep dive into **Three.js**, where I brought a **digital double** of myself to life! Using a 3D Scan I turned myself into a GLB model animated with **Mixamo rigs**. I then placed my clone into an HDR environment to create a visually immersive experience with dynamic lighting and shadows.
+#### For this project, I had to blend and bake custom animations while integrating an environment map to create a cohesive 3D scene. One of the standout challenges was 3D scanning myself to craft the digital double, which added a personal touch and required effort beyond my computer. I also used the GroundedSkybox to anchor the model to the ground, making it appear as if it naturally existed within the virtual environment. Fine-tuning the HDR environment setup to achieve realistic shadows and lighting took time, but seeing the final result of my animated 3D self placed  in virtual nature was incredibly rewarding.
 
 ---
 
